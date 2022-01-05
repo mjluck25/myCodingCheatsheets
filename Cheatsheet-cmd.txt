@@ -1,0 +1,80 @@
+npm - node package manager
+cd -  change directory
+i - install
+-g - global
+"code ." - to open the current directory in vsCode
+
+---
+
+https://www.codecademy.com/article/command-line-commands
+List of Command Line Commands (for unix-based systems such as Linux and Mac OS X)
+
+ls (or "dir" in windows)
+--> “lists” all the files and directories inside of the current directory.
+
+pwd (print working directory) (or "cd" in windows) (current drive and directory)
+--> outputs the name of the directory you are currently in.
+
+
+| (vertical bar or the pipe)
+--> means insert argument
+
+/ (forwardslash)
+--> used to combine arguments
+
+cd | (same as in windows)
+--> changes the working directory.
+--> The cd command takes a directory name as an argument and switches into that directory.
+--> needs an argument
+
+cd ..| (same as in windows)
+--> to move up one directory and/or change to another at that level
+
+mkdir | (same as in windows)
+--> used to make a new directory within the current directory.
+
+touch | (no direct command in windows)
+--> creates a new file inside the working directory.
+--> It takes in a filename as an argument and then creates an empty file with that name in the current working directory.
+
+
+---
+
+Helper commands
+
+clear ("cls" in windows)
+-->  used to clear your terminal
+
+press tab key
+--> used to autocomplete your command.
+
+up/down arrow keys
+--> used to cycle through your previous commands.
+
+
+---
+
+
+Command Line
+--> is a powerful tool used by developers to find, create, and manipulate files and folders.
+--> Command Line Interfaces (CLIs) come in many forms.
+--> The CLI we’ll use is called Bash.
+
+
+---
+
+
+Command Prompt
+--> CLI used by Windows
+
+Bash (Bourne-Again SHell)
+--> A shell is a specific kind of CLI.
+--> is the default shell for Linux and Mac.
+--> To use Bash on a Windows computer, we will download and install a program called Git Bash.
+
+Git Bash
+--> command line emulation for Windows
+--> gives access to all of the git features in the cmd line plus most standard unix cmds.
+--> download from https://gitforwindows.org/
+--> The home directory is represented by the tilde sign, ~, in the CLI after MINGW64. The tilde is another way to say /c/Users/username in Git Bash or C:\home\Users\username in Windows’ Command Prompt.
+--> The absolute path of your current working directory, how you got from the root directory to the directory you are currently in, will always be noted at the top of the window:

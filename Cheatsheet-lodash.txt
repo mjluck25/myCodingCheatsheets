@@ -1,0 +1,19 @@
+lodash.js library
+--> provides many methods that add new functionality for numbers, strings, objects, and arrays. 
+--> If you wanted to use this library in your own projects right now, you could load it, using a Content Delivery Network (CDN) link, in the <head> of your project’s index.html file , 
+
+like so:
+
+<head>
+  <script src='https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js'></script>
+  <!-- Make sure that you load lodash before the file that uses it. -->
+  <script src='file-that-uses-lodash.js'></script>
+</head>
+
+---
+
+Steps in implementing new methods in lodash
+1. SPECIFY the functionality of the method we are implementing.
+2. IDEATE a game plan for how to implement this functionality in code.
+3. IMPLEMENT our game plan.
+4. TEST our code to ensure it works as expected.

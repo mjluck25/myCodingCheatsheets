@@ -1,0 +1,25 @@
+Chapter 1
+
+Script
+--> a series of instructions that a computer can follow
+
+Writing a script
+--> state your goal
+--> list all tasks to be complete
+--> start with the big picture, then break it down to smaller steps:
+ 	1. Define the Goal.
+ 	2. Design the script.
+		--> split the goal into series of tasks
+		--> can be represented using flowcharts
+		Steps in designing the script:
+		--> split into TASKS
+		--> split tasks into sequence of steps
+		--> steps === lines of code
+		--> codes === correct vocabulary and syntax of programming language
+	3. Code each step.
+
+Flowchart Keys
+1. Generic Step (rectangle) |__|
+2. Event (elongated Hexagon) <__>
+3. Input or Output (parallelogram) /__/
+4. Decision (diamond) <>

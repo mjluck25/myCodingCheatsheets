@@ -1,0 +1,71 @@
+Git
+--> a software that allows you to keep track of changes made to a project over time.
+
+git init
+--> typing "git init" in the terminal lets you initialize a new Git project (also known as Git Repository).
+--> can now make use of all the git commands
+
+Git project (also known as Git Repository)
+--> has three parts:
+1. Working Directory
+--> where you create, edit, delete and organize files
+
+2. Staging Area
+--> where you list changes you  make to the working directory.
+
+3. Repository
+-->  where Git permanently stores those changes as different versions of the project.
+
+--> The Git workflow consists of editing files in the working directory, adding files to the staging area, and saving changes to a Git repository.
+
+--> In Git, we save changes with a commit, which we will learn more about in this lesson.
+
+git status
+--> to check on the status of the changes of the contents in the working directory
+--> to also check for untracked files.
+
+git add |
+--> to add files in the staging area so that it can be tracked by git
+--> argument === filename
+--> argument can be multiple filenames
+--> to add all the files: git add .
+
+git diff |
+--> check the differences between the working directory and the staging area
+
+git commit
+--> last step in Git workflow.
+--> permanently stores changes from the staging area inside the repository.
+--> commit messages: -m |
+	--> argument must be in quotation mark, written in present tense and should be brief
+--> will produce a 40-character code -- Simple Hashing Algorithm (SHA), per commit
+
+git log
+--> to view Commits chronologically in the repository.
+
+head commit
+--> is the most recently made commit
+--> syntax: git show HEAD
+
+git checkout HEAD |
+--> restores the file in the working directory to look exactly before the last made commit.
+
+git reset HEAD |
+--> to unstage a file from the staging area to be the same as the HEAD commit.
+--> does not discard file changes from the working directory, it just removes them from the staging area.
+--> can also reset via SHA
+	syntax: git reset first_7_char_of_commit_SHA
+	ie. given a commit 5d692065cf51a2f50ea8e7b19b5a7ae512f633ba
+	git reset 5d69206
+	--> HEAD will now be set to that previous commit.
+
+
+git config --global user.|
+--> configures git in the global scope with the given argument
+	--> ie. user.name "name", user.email "example@gmail.com"
+
+git remote add origin |
+--> to add a remote  repository where the argument is the URL of the remote repository
+
+git push -u origin master
+--> to push local repository to github

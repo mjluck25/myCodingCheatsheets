@@ -1,0 +1,106 @@
+React
+- a javascript library for building user interfaces
+- a js library
+- reacts to state changes
+- always have root components
+- composed of a tree of components
+  --> ie. twitter  app -->composed of:
+APP --> [NavBar --> Profile --> Trends --> Feed[Tweet[Like]]]
+
+React Element (Virtual DOM)--> DOM Element (Real DOM)
+
+
+---		
+To create react in terminal:
+
+npx create-react-app folder-name
+
+
+---
+Attributes
+ --> class === className
+ --> for === htmlFor
+
+
+---
+JSX - javascript xtml
+
+elements in the JSX always need to be included in a parent element
+
+<></> - empty angle brackets can be used as a parent element or container of elements within the JSX file
+
+---
+Filenaming conventions
+
+component files should have capital first letter
+--> ie. Header.js
+
+---
+Props (properties)
+
+Element.defaultProps = {property1: 'this is property 1', etc.}
+--> to create a default props
+
+props.name 
+--> similar to {name}
+--> ie. (props) => {return(props.tasks.map())}=== ({tasks})=>{return(tasks.map())}
+
+
+---
+Components
+--> let you split the UI into independent, reusable pieces,
+--> are like JavaScript functions.
+--> can be reused with different props
+--> ie. 
+Component 1: const Button({ color, text }) =>{return <button style={{backgroundColor: color}} className='btn'>{text}</button>}
+
+Component 2: 
+import Button from 'source file of Component 1' 
+
+const Header = ({title}) => {
+  return (
+    <>
+      <Button color='green' text='Hello' />
+      <Button color='blue' text='Hello 1' />
+    <>
+  )
+}
+
+
+---
+useState Hook 
+--> is a Hook that lets you add React state to function components
+--> import {useState} from 'react'
+const [state, setterfunctionToEditTheState] = useState('default state value')
+
+---
+e.target.value
+--> e is event
+--> target sets the target
+--> value property being set
+--> ie. <input type='text' value={text} onChange={(e)=>{setText(e.target.value)}}> --> the function setText is invoked on the text that is being typed in by the user
+
+target 
+--> is the element that triggered the event (e.g., the user clicked on)
+
+currentTarget 
+--> is the element that the event listener is attached to.
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+Extensions
+ES7 React/Redux/GraphQL/React-Native snippets
+ --> rafce: creates an arrow function that is exported at the bottom of the code
+ --> impt: import PropTypes
+Simple React Snippets

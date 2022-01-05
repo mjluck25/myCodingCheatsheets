@@ -1,0 +1,69 @@
+A site reliability engineer finds and report errors in web platforms.
+
+A test engineer builds automated tests to discover errors in software and make sure that it meets a companies standards.
+
+How to handle errors
+1. Dissect the error.
+--> find the part in the error that gives you insight as to what happened.
+
+2. Ask yourself, is the solution in the error?
+--> Often, you’ll encounter syntax errors that will show exactly where the error occurred and what the error was.
+
+3. Search for other people who have encountered this error.
+
+4. Compare their use case to yours.
+
+5. Try to implement the solution.
+
+6. If it doesn’t work, repeat steps 2-4.
+
+or
+
+1. Run your code. Using the first error’s stack trace, identify the error’s type, description, and location.
+
+2. Go to the file name and line number indicated by the error stack trace. Using the error type and description, identify the bug in your code.
+
+3. Fix the bug and re-run your code.
+
+4. Repeat steps 1-3 until your code no longer throws any errors.
+
+---
+
+Error stack trace
+-->  a printed message containing information about where the error occurred, what type of error was thrown, and a description of the error.
+
+---
+
+JavaScript Error Types
+
+1. SyntaxError
+--> will be thrown when a typo creates invalid code  — code that cannot be interpreted by the compiler.
+
+2. ReferenceError
+--> will be thrown if you try to use a variable that does not exist. 
+--> When this error is thrown, make sure all variables are properly declared.
+
+3. TypeError
+--> This error will be thrown if you attempt to perform an operation on a value of the wrong type.
+-->  For example, if we tried to use a string method on a number, it would throw a TypeError.
+
+---
+
+Locating Silent Bug
+--> An incredibly powerful tool for locating bugs is a method you likely learned very early on in your JavaScript journey: console.log()! 
+
+--> By adding print statements to our code, we can identify where things have gone wrong. 
+
+
+---
+
+
+Debugging with console.log()
+
+Let’s synthesize our workflow from the previous exercise into a reusable set of debugging steps.
+
+1. Go to the beginning of the malfunctioning code. Print out all starting variables, existing values, and arguments using console.log(). If the values are what you expect, move on to the next piece of logic in the code. If not, you have identified a bug and should skip to step 3.
+
+2. After the next piece of logic in your code, add console.log() statements to ensure updated variables have the values that you now expect and that the block of code is being executed. If that logic is executing properly, continue repeating this step until you find a line not working as expected, then move to step 3.
+
+3. Fix the identified bug and run your code again. If it now works as expected, you’ve finished debugging! If not, continue stepping through your code using step 2 until it does.

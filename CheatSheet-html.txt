@@ -1,0 +1,284 @@
+Home page will always be 'index.html' 
+--> that's why we always need an 'index.html' file
+
+
+---
+! + tab: shortcut to create a template
+--
+
+Basic HTML Page Structure
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    ............META, Links
+  </head>
+  <body>
+  .........Page Content
+  </body>
+</html>
+
+1. <!DOCTYPE html>
+--> HTML Version
+
+2. <html>
+--> Root element that will wrap all the elements in the page
+--> will always contain 1 HEAD element and 1 BODY element
+
+3. <head>
+--> contains info about the page(meta, links, title)
+  
+  Style element
+  -->  define style information for a single HTML page
+  --> <style></style>
+  Meta element
+  --> meta data: will not be displayed on the page, but are used by browsers (how to display content or reload page), by search engines (keywords), and other web services. 
+    --> charset attribute: defines the character set used 
+      --> <meta charset="UTF-8">
+    --> name attribute: keywords for search engines
+      --> <meta name="keywords" content="HTML, CSS, JavaScript">
+    --> name attribute: description of webpage
+      --> <meta name="description" content="Free Web tutorials">
+    --> name attribute: author of a page
+      --> <meta name="author" content="John Doe">
+    --> name attribute: user's visible area of a web page.
+      --> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    --> http-equiv attribute: refresh document every 30 seconds
+      --> <meta http-equiv="refresh" content="30">
+  
+  Link element
+  --> links to external resources (ie. css stylesheets & javascript file)
+    --> most often used to link to external style sheets
+  --> <link rel="stylesheet" href="">
+  
+  Title element
+  --> page title: defines the title of the document
+--> content within the HEAD element will not be visible on a page that is being rendered
+
+4. <body>
+--> what will be displayed on the page
+
+--
+
+Heading element
+--> <h1></h1> up to <hn></hn> where n = increment of Heading
+
+--
+
+Note: HTML is white space collapsing.
+--> html is going to ignore extra spaces
+--> ie. <h3>hello             world</h3> will return 'hello world'
+
+--
+
+Dummy pick
+--> type  in 'Loremn' + tab --> n  is states how many dummy words it will return
+
+--
+
+Image element
+--> is a self-closing element (without a closing tag)
+--> 'img' + tab (default img element)
+	--> <img src="" alt="">
+    	--> src and alt are ATTRIBUTES
+      		--> ATTRIBUTES describe the element
+      	--> src = source or location of the image
+        	--> we need the 'path' where the image is located
+        	--> type '/' if it is located in the same folder of the working file
+    		--> or type './' which means it is in the same directory
+    		--> or type '../' if it is located in the actual folder just outside the directory
+      --> alt = alternately will display if the src is not accessible or if the image is not located
+
+Image from the web
+--> just copy the image address of the photo from the web then paste it to the src attribute
+
+Getting COPYRIGHT-FREE images from the web
+--> many sites that offer this like the following
+	-->  https://pixabay.com/
+	--> https://www.pexels.com/ (also videos here)
+	--> https://gratisography.com/ (more on funny pictures)
+
+height/width attribute
+--> to change the size of the image to be rendered
+--> will adjust automatically both height and width if only width or height is entered
+--> note: for larger pictures, we can resize first the image into smaller pixels for them to be rendered in the website faster
+
+--
+
+Comments
+--> <!--text-->
+--> shorcut key: ctrl + /
+
+--
+
+Line break
+--> <br>
+
+--
+
+Creating links
+--> <a href=""></a>
+  --> href attribute: tells where the user is navigating to when clicking the link
+  --> target attribute: set to blank so that when the clicking the link, it will open on ANOTHER BROWSER
+  --> id attribute: to navigate to certain portion of the page
+    --> id="top" --> href="#top"
+--> different objects other than text can also be inserted to be a link such as images, etc.
+--> can also use '#' if you don't know yet the link location or url instead of the url itself --> dummy link
+
+--
+
+Sup/Sub element
+--> <sup></sup> --> superscript
+--> <sub></sub> --> subscript
+--> can be inserted inside each text/words within tags
+
+strong/em element
+--> <strong></strong> --> bold
+--> <em></em> --> italic
+
+--
+
+Special characters
+--> can be accessed and displayed by using --> '&''entity name'';'
+--> list of entitiy names: https://www.tutorialspoint.com/html5/html5_entities.htm
+
+--
+
+Unordered list
+--> <ul></ul>
+--> each element within the unordered list must have 'li' element
+  --> <li></li>
+--> useful in navigation throughout the page
+  --> can also display list of links within the page
+--> displays bullets of list items
+
+Ordered list
+--> <ol></ol>
+--> displays numbered items
+
+Nested list
+--> list within a list
+--> ie. <ul> <li> <ol> <li> </li> </ol> </li> </ul>
+
+--
+
+Table element
+--> <table></table>
+  --> includes rows --> <tr></tr>
+    --> includes table head --> <th></th>
+    --> includes data --> <td></td>
+        --> number of data defines how many column in a row
+
+--
+
+Setting up a FORM
+--> <form action="" method=""></form>
+--> used to collect data from a user
+  --> action attribute: where the information will be sent
+  --> method attribute: how the information will be processed
+--> most common type of form input is the 'input' element
+  --> <input> --> having different types (most common is text)
+  --> type in "input:text" --> <input type="text" name="" id="">
+    --> name attribute: only used when submitting data
+    --> id attribute: used for labeling
+    --> placeholder attribute: to show a preview text in the form
+    --> value element: used to hardcode data
+      -->hardcode = fix in a text within the form
+
+Submit element
+  --> button:submit --> <button type="submit"></button>
+
+Label element
+  --><label for=""> --> where the value of the 'for' attribute is the 'id' attribute of the input element
+  --> clicking the label will highlight the id inserted in the for attribute
+
+Textarea element
+--> <textarea name="" id="" cols="30" rows="10"></textarea>
+
+Radio button
+--> <input type="radio" name="" id="" value="">
+  --> name attribute: should always be the same in all related choices in a radio button so that only one choice can be picked
+  --> value attribute: the value that is passed on upon submitting
+
+Checkbox button
+--> <input type="checkbox" name="" id="">
+--> can pick multiple choices
+
+Select dropdownlist
+--> <select name="language" id=""></select>
+--> insert <option></option> within the select tag 
+
+--
+
+Organizing our code
+--> Prettier - code formatter extension
+  --> go to settings and find the 'editor.Format on save and Format on paste' option
+  --> check both options
+  --> it automatically formats the code upon saving/pasting
+
+Live Server extension
+--> for real-time display of html coding
+--> click on 'Go Live' in the taskbar to open in browser
+
+Emmet extension
+--> built-in in the vs code editor
+--> ie. when you type '!' + tab
+  --> it will automatically create the default html Structure
+
+Highlight Matching tag extension
+--> preferred values are:
+  --> borderWidth: 3px, borderStyle: solid, borderColor: yellow
+
+Indent-rainbow extension
+--> install for colorful indentation
+
+--
+
+Keyboard Shortcuts
+--> ctrl + K + S
+
+Multiple cursors
+--> hold alt + click
+
+Select whole line
+--> triple click
+
+Same Selection
+--> ctrl + F2
+
+Start/end of Document
+--> ctrl + home/end
+
+Navigate through words
+--> ctrl + left/right
+
+Move whole line
+--> alt + up/down
+
+Change tabs
+--> alt + left/right
+
+Start a new line
+--> shift + enter
+
+--
+
+External Resources
+--> https://developer.mozilla.org/en-US/
+--> https://www.w3schools.com/
+
+--
+
+
+
+
+
+
+
+
+
+
+
+
+

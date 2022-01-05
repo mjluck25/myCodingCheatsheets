@@ -1,0 +1,319 @@
+Object-Oriented Programming
+--> combine a group of related variables and functions into a unit(we call this as object)
+--> variables as properties and functions as methods
+
+Procedural Programming
+--> variables and functions are separate or decoupled
+
+---
+Four Pillars in OOP
+1. Encapsulation
+--> grouping of related variables and functions that operate on 
+them into OBJECTS
+--> makes the parameters in functions fewer
+--> reduce complexity and increase reusability
+
+2. Abstraction
+--> makes simpler interface
+--> reduces the impact of change (only changes apply within the object)
+--> hide the details while showing the essentials
+
+3. Inheritance
+--> eliminates redundant code
+
+4. Polymorphism
+--> many forms
+--> refactor ugly switch/case statements
+
+
+---
+Object-literal syntax
+--> using curly brackets {}
+
+
+---
+Object members
+1. Property
+--> if the member is not a function
+
+2. Method
+--> if a member is a function
+--> used to define a logic
+
+---
+Two ways to create an Object
+1. Factory Function
+--> returns an object with this function
+-->ie.
+function createCircle(radius) {
+  return {radius,
+  draw: () => {
+    console.log('draw');
+  }
+  };
+}
+
+const circle = createCircle(1)
+
+2. Constructor Function
+--> first letter of the function name is capital
+	-->ie. function Circle(){}
+--> we use the 'this.' keyword to set the properties of this object
+	this. keyword
+	--> is a REFERENCE to the OBJECT that is executing this piece of code
+	--> by default, this refers to the global object
+--> then we use the new operator
+	--> ie. const another = new Circle(); 
+	--> the new operator will create an empty object {};
+	--> it will set the this keyword to point to that object
+	--> it will return that object from this function
+
+---
+Constructor Property
+--> every object has constructor property and that references the function that was used to create that object
+--> ie. let x = {}; this is similar to let x = new Object();
+--> By default, javascript have built in constructors such as:
+ --> ie. new String(); is similar to '', "", ``
+ --> ie. new Boolean(); is similar to true, false
+ --> ie. new Number(); is similar to 1,2,3,...
+
+---
+Value Types(primitives)
+--> includes Number, String, Boolean, Symbol, undefined, null
+--> primitives are copied by their value
+ -->ie. 
+let x = 10
+let y = x
+
+x = 20
+conclusion: x will return 20 while y while return 10
+
+
+Reference Types
+--> includes Object, Function, Array
+--> objects are copied by their reference
+ -->ie. 
+let x = {value: 10} //we use a reference type (object)
+let y = x
+
+x.value = 20
+conclusion: x and y will both return {value: 20}
+
+---
+Adding/Removing Properties
+--> can add property by using (dot notation).newPropertyName or (bracket notation)[newPropertyName]
+ --> ie. 
+circle.location = {x: 1} or; (dot notation)
+circle['location'] ={x: 1} (bracket notation)
+
+--> using bracket notation is useful when the property is dynamically generated
+ --> ie. 
+const propertyName = 'location' //location depends on runtime, etc.;
+
+circle[propertyName] //we use bracket notation to access the property 
+
+--> we also use the bracket notation when the identifier is not valid (ie. with symbols like -)
+ --> ie. 
+circle[center-location]
+
+--> we can delete a property from an existing object using delete
+ --> ie.
+delete circle.location or delete circle['location'] 
+
+
+---
+Enumerating Properties
+--> we use the for-in loop
+ --> to get all members of an object
+syntax:
+for (let key in object) {
+  console.log(key);
+} 
+ 
+ --> to get the value of all the members of an object
+syntax:
+for (let key in object) {
+  console.log(key, object[key]);
+} or  use Object.values(object) //will return an array of values of all the properties
+ 
+ --> to get specific type of member (whether property or method)
+syntax:
+for (let key in object) {
+  if (typeof object[key] !== 'function') or vice versa
+  console.log(key, object[key]);
+} 
+
+--> use Object.keys(object) to get all the members of an object into an array
+syntax:
+const keys = Object.keys(object)
+console.log(keys)
+
+--> use the 'in' operator to get to know if an object has a given property
+--> checking the existence of a property or method in an object
+syntax:
+if ('propertyName' in object) {console.log('anything')}
+
+
+---
+Private Properties and Methods
+--> we make some properties/methods private by declaring it inside the object as local variables
+syntax:
+function Object() {
+let property 1 = someValue
+let property 2 = function(){}
+this.property3 = property3
+}
+const object = new Object()
+
+
+---
+Getters and Setters
+-->  we can use Object.defineProperty() or Object.defineProperties to define getters (read-only) and setters(to change the value of the property from the outside)
+--> gives simpler syntax and allows equal syntax for props and methods
+
+syntax: //for single Property
+Object.defineProperty(this, 'propertyName', {
+get: function(){
+return propertyName
+}, 
+set: function(value) {
+if (!value) //this is for validation of the value
+throw new Error('Error')
+propertyName = value
+}
+})
+
+--> defining getters/setters in an object
+examples: getter
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+  get lang() {
+    return this.language;
+  }
+};
+
+
+examples: setter
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "",
+  set lang(lang) {
+    this.language = lang;
+  }
+};
+person.lang = "en";
+
+
+---
+Prototypes
+--> pseudo objects in JS
+--> one of the best practices in creating functions within objects
+syntax: //to create a prototype
+Object.prototype.functionName = function(){}
+--> you set a function functionName as prototype within the object
+
+
+---
+Inheritance
+example 1 Inheritting objects (ES5 way of creating objects)
+
+function Object1(propertyName1, propertyName2, propertyName3) {
+  this.propertyName1 = propertyName1
+  this.propertyName2 = propertyName2
+  this.propertyName3 = propertyName3
+}
+
+syntax:
+function Object2(propertyName1, propertyName2, propertyName3, propertyName4) {
+   Object1.call(this, propertyName1, propertyName2, propertyName3)
+	//propertyName1 - 3 are inheritted from Object1
+   this.propertyName4 = propertyName4
+}
+
+example 2. Inheritting prototypes
+Object1.prototype.functionName = function(){}
+syntax:
+Object2.prototype = Object.create(Object1.prototype)
+--> Object2 will inherit the prototype of Object1
+
+
+---
+Creating Objects (ES5 way of creating objects)
+const objectName = {
+functionOne: ()=>{},
+functionTwo: ()=>{}
+}
+
+syntax:
+const object1 = Object.create(objectName, {
+parameter1: {value :'someString'}, 
+parameter2: {value :'someString'},
+..etc.}) or
+
+const object1 = Object.create(objectName)
+object1.parameter1 = 'someString'
+object1.parameter2 = 'someString'
+etc.
+
+--> object1 will inherit all set properties and  methods in the objectName object
+--> note that objectName must be first declared as an object (ie. const objectName = {})
+
+
+---
+Classes (ES6 way of creating objects)
+syntax:
+class ClassName {
+  constructor(propertyName1, propertyName2, propertyName3) {
+  this.propertyName1 = propertyName1
+  this.propertyName2 = propertyName2
+  this.propertyName3 = propertyName3
+  }
+
+  functionName() {} //functions will automatically be inside the prototype
+}
+
+const object1 = new ClassName('value1','value2','value3')
+
+
+---
+Subclasses
+class ObjectName {
+  constructor(propertyName1, propertyName2, propertyName3) {
+  this.propertyName1 = propertyName1
+  this.propertyName2 = propertyName2
+  this.propertyName3 = propertyName3
+  }
+
+  functionName() {}
+}
+
+syntax:
+class SubclassName extends ObjectName {
+constructor(propertyName1, propertyName2, propertyName3, propertyName4) {
+  super(propertyName1, propertyName2, propertyName3)
+  } //super here is similar to .call method in ES5
+  this.propertyName4 = propertyName4
+}
+
+---
+Destructor
+--> opposite constructors
+--> deletes the created constructor when it is of no use
+--> used when getting methods or properties in a library
+
+const object1 = new ObjectName(propertyName1, propertyName2, propertyName3, propertyName4)
+
+syntax:
+const { propertyName1, propertyName2, propertyName3, propertyName4 } = object1
+console.log(propertyName1) //returns the value of this property
+
+
+
+---
+Notes
+1. If the key and value in the key-value pair of an object is the same, we can remove the value and just use the key.
+
+2. In JS, functions are objects

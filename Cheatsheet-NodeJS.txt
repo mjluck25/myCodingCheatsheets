@@ -1,0 +1,43 @@
+Node.js
+--> a JavaScript runtime for building server-side or desktop applications.
+
+--> allows developers to write JavaScript code that runs directly in a computer process itself instead of in a browser.
+
+--> can, therefore, be used to write server-side applications with access to the operating system, file system, and everything else required to build fully-functional applications.
+
+--> is written in C, C++, and JavaScript, and it is built on the open-source V8 JavaScript engine which also powers JS in browsers such as Google Chrome. As V8 supports new features in JavaScript, they are incorporated into Node.
+
+---
+
+Node-specific functionality (see https://nodejs.org/dist/latest/docs/api/)
+
+Globals
+1. module
+--> an object referring to the functionality that will be exported from a file.
+--> each file is treated as a module.
+
+2. require()
+--> is a function used to import modules from other files or Node packages.
+
+3. process
+--> an object referencing to the actual computer process running a Node program and allows for access to command-line arguments and much more.
+
+
+---
+
+
+How to use Node
+
+1. Download Node.js and install for your operating system.
+--> can be run through a terminal by typing: node anyFileNameScript.js.
+
+2. Node as REPL (Read, Evaluate, Print, Loop)
+--> just type node and press enter in a terminal
+--> then enter in the command line your code!
+
+
+---
+
+Version Management
+
+There are two version managers that provide this functionality: nvm (Node Version Manager) and n. N can be installed very easily as an npm package!
