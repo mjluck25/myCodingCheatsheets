@@ -75,6 +75,38 @@ Class Selector (`.`)
   > css: `.green {property:value;}`
 - can add multiple classes separated by a space
 
+Attribute Selector (`element[attr]`)
+
+- matches elements based on the presence or value of a given attribute
+
+`element[attr]`
+
+- Represents elements with an attribute name of `attr`.
+
+`element[attr=value]`
+
+- Represents elements with an attribute name of `attr` whose value is exactly `value`.
+
+`element[attr~=value]`
+
+- Represents elements with an attribute name of `attr` whose value is a whitespace-separated list of words, one of which is exactly `value`.
+
+`element[attr|=value]`
+
+- Represents elements with an attribute name of `attr` whose value can be exactly `value` or can begin with `value` immediately followed by a hyphen, `-` (U+002D). It is often used for language subcode matches.
+
+`element[attr^=value]`
+
+- Represents elements with an attribute name of `attr` whose value is prefixed (preceded) by `value`.
+
+`element[attr$=value]`
+
+- Represents elements with an attribute name of `attr` whose value is suffixed (followed) by `value`.
+
+`element[attr*=value]`
+
+- Represents elements with an attribute name of `attr` whose value contains at least one occurrence of `value` within the string.
+
 Universal Selector (`*`)
 
 - least amount of specificity
@@ -82,6 +114,17 @@ Universal Selector (`*`)
 - usually used for:
   > box-sizing: border-box;
   > margin: 0;
+
+Pseudo class Selector (`:`)
+
+- keyword added to a selector that specifies a special state of the selected element(s).
+- most common pseudo class:
+`:focus`
+`:visited`
+`:hover`
+`:disabled`
+`:active`
+- [list of pseudo classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 
 Inheritance, Parent, Children
 
@@ -102,8 +145,8 @@ Last Rule and Specificity
 ### Color Properties
 
 - there are _140_ color names
-  > "color: value;"
-  > "background-color: value;"
+  > "color: value;" sets the foreground color
+  > "background-color: value;" sets  the background color
   > "background: color value;"
 
 #### Color specification/format
