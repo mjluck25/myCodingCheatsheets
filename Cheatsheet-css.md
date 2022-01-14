@@ -34,6 +34,12 @@ Comment
 
 - `/* */`
 
+Important
+
+- it overrides any style no matter how specific it is.
+- useful when working with multiple stylesheets
+- syntax: `property: value !important`
+
 ---
 
 ### CSS Rule/Syntax
@@ -627,7 +633,7 @@ __syntax shortcut__
 - adds shadow on the text/box
 - syntax: `x-axis value` `y-axis value` `blur value` `color`
 - can use text/box-shadow generator and copy & paste the code
-
+ 
 ---
 
 browser prefixes
