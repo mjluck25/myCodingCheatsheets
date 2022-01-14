@@ -724,3 +724,21 @@ to remove extra space (whitespace) in html
 
 - sets the element to the designated span of rows or columns
   > ie. grid-column: 1/3; means start from 1st line and end in 3rd line
+
+---
+
+Online tools to test pages in multiple browsers
+
+1. [BrowserCam](BrowserCam.com)
+
+2. [BrowserLab](BrowserLab.Adobe.com)
+
+3. [BrowserShots](BrowserShots.org)
+
+4. [CrossBrowserTesting](CrossBrowserTesting.com)
+
+For CSS bugs
+
+1. [PositionIsEverything](PositionIsEverything.net)
+
+2. [QuirksMode](QuirksMode.org)
