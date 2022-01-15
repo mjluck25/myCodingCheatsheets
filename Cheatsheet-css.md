@@ -742,3 +742,44 @@ For CSS bugs
 1. [PositionIsEverything](PositionIsEverything.net)
 
 2. [QuirksMode](QuirksMode.org)
+
+---
+
+### Semantic vs. Non-semantic (`class`-naming)
+
+Semantic
+
+- descriptive
+- doesn't convey their styles
+
+Non-semantic
+
+- more on specifying the style to use
+  > ie. `<div class="bG-yellow"></div>`
+- doesn't convey what an element represents
+
+#### Why use Semantics?
+
+1. Because they are readable.
+
+2. Because they make it easier to build responsive sites.
+
+3. Because they are easier to find.
+
+4. Because they reduce the chance of regression.
+
+5. Because visual classes aren't necessarily valuable.
+
+6. Because they provide hooks for automated tests.
+
+7. Because they provide hooks for JavaScript.
+
+8. Because they need less maintaining.
+
+9. Because they're easier to debug.
+
+10. Because the standards recommend it.
+
+11. Because styling state is easier.
+
+12. Because they produce a small HTML footprint.
