@@ -51,3 +51,148 @@ Process:
 - look for _similarities_ and _differences_ as you begin to choose HTML tags and CSS selectors.
 - apply and build your _style guide_.
 - be open to change.
+
+---
+
+## Web Hosting
+
+Hosting Provider
+
+- business that maintains all the resources needed to host applications.
+- storage area and where we post the content of the website.
+
+### Types of Hosting
+
+1. Website Builders
+
+   - build website without manually writing code (ie. [wix](https://www.wix.com/mystunningwebsites/illustration?utm_source=affiliate&utm_medium=paid_referral&utm_campaign=af_29@realinfopoint.com/&experiment_id=cake_98491926^108), [squarespace](https://www.squarespace.com))
+   - include different kinds of **CMS** or _Content Management Systems_.
+
+2. Shared Web Hosting
+
+   - you share a server with other people.
+   - cheaper
+
+3. Dedicated Web Hosting
+
+   - server only for you.
+   - more expensive.
+
+4. Cloud Hosting
+
+   - **cloud** is a vast network of data centers and different computing resources made available to consumers.
+   - lots of services, highly distributed in nature.
+   - best-suited when you want to run different parts of your application on different types of machine.
+
+   - Types:
+
+     - Infrastructure as a Service (IaaS)
+       - get _raw_ infrastructure resources.
+       - gives you _access to servers, storage, networks_ but you have to maintain them.
+       > You manage: Application, Data, Runtime, Middleware, OS
+       > Provider manage: Virtualization, Servers, Storage, Network
+
+     - Platform as a Service (PaaS)
+       - the _provider manages the infrastructure_ while _you deploy functions_.
+       > You manage: Functions, Data
+       > Provider manage: Runtime, Middleware, OS, Virtualization, Servers, Storage, Network
+
+     - Function as a Service (FaaS)
+
+### What (Web Hosting) to choose? (recommended)
+
+1. [GitHub Pages](https://pages.github.com/)
+
+   - best-suited for static applications
+   - for simple html and css files.
+   - for compiled version of react applications.
+   - for personal portfolio.
+
+2. [Heroku](https://www.heroku.com/)
+
+   - good for more complex full-stack apps.
+   - for node.js server or SQL database.
+
+3. [Digital Ocean](https://www.digitalocean.com/)
+
+   - Full control over cloud resources.
+   - have a lot of resources on how to get started.
+
+
+---
+
+## Domain Name
+
+- is used to translate _IP Addresses_ (coded-numbers) into _names_ for humans to remember.
+- serves as a bridge the communication gap between humans and computers.
+- are registered and can be used for a website and/or email account.
+- are what users type in the browsers to access websites.
+- also known as **web addresses**
+
+### How does it work?
+
+1. `Domain name` 
+    -(type into)-> 
+2. `Web browser` (translated by `DNS` into `IP Address`) 
+    -(if not pulled from cache, goes to..)-> 
+3. `Resolver Server` or `ISP` 
+    -(if still cannot find, goes to..)-> 
+4. `root server`
+    -(sends the query to..)->
+5. `TLD server`
+    -(goes back to...)->
+6. `Resolver Server`
+    -(then goes to..)->
+7. `Name Server`
+    -(will return the IP address for the requested hostname back to)->
+8. `Web browser`
+    -(will be stored in memory of the browser as **cache**)
+
+Domain Name System (DNS)
+
+- translates domain names to IP addresses so browsers can load internet resources.
+
+Resolver Server
+
+- is the computer that responds to a recursive request from a client and takes the time to track down the DNS record.
+- **caching** is a data persistence process that helps short-circuit the necessary requests by serving the requested resource record earlier in the DNS lookup.
+
+Internet Service Provider (ISP)
+
+- provides access to the internet.
+
+Root Server
+
+- at top level in the hierarchy of the domain name searcher or internet search
+- there are 13 root servers throughout the world and operated by different organizations.
+- does not exactly know the domain but it directs the resolver server where to find it.
+
+Top Level Domain Server (TLDs)
+
+- it hosts the last portion of a hostname (ie. `com` from example.com)
+- stores the address information for the top level domains.
+
+Name Server
+
+- responsible for knowing everything about the domain including the IP address.
+- final authority that will send back to the computer with the site
+
+### Domain Name examples
+
+Parts of domain name
+> https://www.codecademy.com
+> `https://`: Protocol
+> `www.`: Sub-domain
+> `codecademy`: Second-level Domain
+> `.com`: Top-level Domain
+
+- `.com`, `.org`, `.edu`, `.net`, `.biz`, `.info`
+- for country codes: `.ph` for Philippines, `.cn` for China, `.fr` for France, `.us` for United States etc.
+
+### Building a Website through Domain and Web Hosting
+
+1. Get a Domain name. [Namecheap](https://www.namecheap.com)
+   - our domain will point to our website that is hosted on a server.
+2. Get Web Hosting for your website.
+3. Post content of the website to the web host or service provider.
+   - website will be stored to web servers.
