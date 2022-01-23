@@ -99,6 +99,52 @@ Hosting Provider
 
      - Function as a Service (FaaS)
 
+---
+
+### Terms in Hosting
+
+Disk Space
+
+- total size of all the files that make up your site. (all HTML, CSS, images and scripts)
+
+Bandwidth
+
+- the amount of data the hosting company will send to your site's visitors.
+  > ie. 10 visitors == bandwidth is 10 times of your disk space.
+
+Backups
+
+- check whether the hosting company performs backups on your site and how often.
+
+Email accounts
+
+- most hosting companies provide email servers.
+- check the size of mailbox allowed and the number of mailboxes you can use
+
+Server-side languages and databases
+
+- if you are using CMS, it will likely use a server-side programming language and a database (such as _PHP with a MySQL database_ or _ASP.Net with a SQL Server database_)
+
+FTP (File Transfer Protocol) & Third Party Tools
+
+- to transfer code and images across the internet from your local computer to the web server hosting your site.
+- faster at transmitting files.
+- web hosting often provides FTP details to enter in the FTP program to connect to the server.
+- this will be an address (such as `ftp://mydomain.com`), a `username` and a `password`.
+  
+  - Popular FTP Applications:
+    - [FileZilla](filezilla-project.org) for Windows, Mac, Linux
+    - [FireFTP](fireftp.mozdev.org) for Windows, Mac, Linux
+    - [CuteFTP](cuteftp.com) for Windows, Mac
+    - [SmartFTP](smartftp.com) for Windows
+    - [Transmit](panic.com/transmit) for Mac
+  - Popular third party tools:
+    - for BLOGS: [wordpress](wordpress.com), [tumblr](tumblr.com), [posterous](posterous.com)
+    - for E-Commerce: [shopify](shopify.com)[bigcartel](bigcartel.com), [goMagento](go.magento.com)
+    - for E-mail Newsletter: [campaign monitor](campaignmonitor.com), [mailchimp](mailchimp.com)
+    - for Social Networking Sharing Buttons: [addthis](addthis.com), [addtoany](addtoany.com)
+
+
 ### What (Web Hosting) to choose? (recommended)
 
 1. [GitHub Pages](https://pages.github.com/)

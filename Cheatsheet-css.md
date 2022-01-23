@@ -161,8 +161,9 @@ Last Rule and Specificity
 
    > ie. color: rgb(255, 255, 255); === white
 
-   - Opacity/Transparency _(0-1)_
+   - Opacity/Transparency _(0-1)_ or (00-ff) in hex
      > ie. background: rgba(r,g,b,0.5)
+     - _a_ means _alpha_
 
 2. **HEX Values** _(#RRGGBB)_
 
@@ -172,11 +173,24 @@ Last Rule and Specificity
 
 3. **HSL** (_Hue, Saturation, Light_)
    - _Hue_: measured in degrees of the color circle (0-360)
+     - red = 0 degrees
+     - green = 120 degrees
+     - blue = 240 degrees
    - _Saturation_: Saturation percent (full saturation is 100%, 0% is shade of gray)
+     - richness of color
+     - refers to the amount of gray in a color
    - _Light_: lightness percent (100% is white, 50% is normal, 0% is black)
 
-- [random color palettes](coolors.co)
+- [Random Color Palettes](coolors.co)
 
+Contrast
+
+- to ensure the legibility of text
+- balance in color(light and dark) between the foreground and background color
+  - Low Contrast: text is harder to read and affects those with poor monitors and sunlight on their screen.
+  - High Contrast: text is easier to read but a lot of text with too much contrast makes it hard to read.
+  - Medium Contrast: useful for long span of texts and it improves readability.
+- [Contrast Checker](https://snook.ca/technical/colour_contrast/colour.html)
 ---
 
 ### CSS Properties and corresponding Units
@@ -224,34 +238,88 @@ Calc Function (`calc()`)
 - mix and match values
 - syntax: there should be a space in between operators
 
-### Typography
+---
+
+### **Typography**
 
 `font-family` property
 
 - adds a font style to a text
 
+#### **Common Fonts**
+
+Serif
+
+- are the small features at the end of strokes within letters.
+- easier to read than san-serif fonts in **print**.
+- ie. _Garamond_
+
+Sans-Serif
+
+- without serif.
+- describe fonts with characters which lack flourishes at the end of the strokes.
+- often used to project an image of simplicity, modernity or minimalism.
+- ie. _Helvetica_
+
+Monospaced
+
+- characters each occupy the same amount of horizontal space.
+- many text editors use this font which aid in distinguishing between potentially similar characters (such as `I` and `1`) and in counting the number of characters in a line.
+- ie. _Space Mono_
+
+Web fonts
+
+- multitude of different fonts on the web.
+- can either import or copy and paste the code to the stylesheet
+- Free font services: [Google Fonts](https://fonts.google.com/), [Adobe Fonts](https://fonts.adobe.com/).
+- Paid font services: [Fonts](fonts.com)
+  - where you can download multiple fonts.
+  - different font formats:
+    - _OTF_ (OpenType Font)
+    - _TTF_ (TrueType Font)
+    - _WOFF_ (Web Open Font Format)
+    - _WOFF2_ (Web Open Font Format 2)
+  - `@font-face` can be used in CSS stylesheet to link to the relative path of the font file.
+
+    ```css
+    Syntax: @font-face {
+              font-family`: 'nameYouWant';
+              src: url('path/fontName.woff2'), 
+                   url('path/fontName.woff'), 
+                   url('path/fontName.ttf');
+            }
+    ```
+
+- **Web safe fonts**: pre-installed fonts of browsers and OS.
+  - ie. Arial, Verdana, Tahoma, Trebuchet MS, Times New Roman, Georgia, Courier New, Brush Script M7.
+
 `font-stack`
 
 - adds multiple font style in case the browser doesn't support the selected font style
 - it allows a generic font-family
-  - such as serif, sans-serif, cursive, fantasy and monospace
-
-google fonts
-
-- search google fonts and you can pick and import different fonts to the browser
-- can either import or copy and paste the code to the stylesheet
+  - such as serif, sans-serif, cursive, fantasy and monospaced
 
 `font-weight`
 
-- bold, bolder, lighter
+- bold, normal, bolder, lighter
+- numerical value: `1` (lightest) - `1000` (boldest) without units.
+  - common practice is to use increments of `100`.
+  - It’s important to note that not all fonts can be assigned a numeric font weight, and not all numeric font weights are available to all fonts.
 
 `font-style`
 
 - inherit, italic, normal, oblique
 
+`text-transform`
+
+- transforms text
+- capitalize (capitalize first letter of all words), uppercase (capitalize all letters), lowercase (lower case all letters)
+
+#### **Text Layout**
+
 `text-align`
 
-- alignment of the text
+- aligns the text to its parent element.
 - center, justify, left, right
 
 `text-indent`
@@ -261,7 +329,9 @@ google fonts
 
 `line-height`
 
-- controls the space in between the lines
+- controls the space in between the lines.
+- can be unitless or a length value.
+  - unitless number is preferred since it is responsive based on the current font size.
 
 `letter-spacing`
 
@@ -270,11 +340,7 @@ google fonts
 `word-spacing`
 
 - controls the spaces in between words
-
-`text-transform`
-
-- transforms text
-- capitalize (capitalize first letter of all words), uppercase (capitalize all letters), lowercase (lower case all letters)
+- recommended unit is `em`.
 
 `text-decoration`
 
@@ -451,13 +517,13 @@ position: `fixed`
 - will use mostly: `min-width` and `max-width`
 - starts with `@media`
   >ie. @media screen and (min-width: 576px) {
-  >        body {
+  >        `body` {
   >             background: red;
   >             }
-  >        .banner {
+  >        `.banner` {
   >             background: yellow;
   >             }
-  >        h1 {
+  >        `h1` {
   >             color: black;
   >           }
   >       `}
