@@ -42,7 +42,7 @@ Important
 
 ---
 
-### CSS Rule/Syntax
+### ***CSS Rule/Syntax***
 
 > ie. e1 {color:red; font-size: 3rem;}
 
@@ -53,18 +53,18 @@ Important
 - VALUE: value of the property (ie.`red` and `3rem`)
 - always end with semicolon per `property:value` pair
 
-Grouping Selectors
+#### **Grouping Selectors**
 
 > ie. h1 and h2 --> h1, h2 {}
 
 - use a comma (without space) per element to be grouped and styled
 
-Type Selector
+#### **Type Selector**
 
 - selects the type of the html element that you would like to style
 - such as `h1`, `h2`, `p`, `body`, etc.
 
-ID Selector (`#`)
+#### **ID Selector** (`#`)
 
 - selects the value of an `id` attribute within an element
 - always starts with hash sign before the given id attribute value
@@ -73,7 +73,7 @@ ID Selector (`#`)
   > css: `#title {property:value;}`
 - can only have a single value
 
-Class Selector (`.`)
+#### **Class Selector** (`.`)
 
 - selects the value of an `class` attribute within an element
 - always starts with dot sign before the given class attribute value
@@ -81,37 +81,42 @@ Class Selector (`.`)
   > css: `.green {property:value;}`
 - can add multiple classes separated by a space
 
-Attribute Selector (`element[attr]`)
+#### **Descendant and Child Combinators**
+
+- syntax for descendant: `ancestor/parent descendant{block of code}`
+- syntax for direct children: `ancestor/parent > child{block of code}`
+
+#### **Attribute Selector**
 
 - matches elements based on the presence or value of a given attribute
 
-`element[attr]`
+Existence (`element[attr]`)
 
-- Represents elements with an attribute name of `attr`.
+- Matches a specific attribute (whatever its value).
 
-`element[attr=value]`
+Equality (`element[attr="value"]`)
 
-- Represents elements with an attribute name of `attr` whose value is exactly `value`.
+- matches a specific attribute with specific value.
 
-`element[attr~=value]`
+Space (`element[attr~="value"]`)
 
-- Represents elements with an attribute name of `attr` whose value is a whitespace-separated list of words, one of which is exactly `value`.
+- matches a specific attribute whose value appears in a space-separated list of words.
 
-`element[attr|=value]`
+Prefix (`element[attr^="value"]`)
 
-- Represents elements with an attribute name of `attr` whose value can be exactly `value` or can begin with `value` immediately followed by a hyphen, `-` (U+002D). It is often used for language subcode matches.
+- matches a specific attribute whose value begins with a specific string.
 
-`element[attr^=value]`
+Substring (`element[attr*="value"]`)
 
-- Represents elements with an attribute name of `attr` whose value is prefixed (preceded) by `value`.
+- matches a specific attribute whose value contains a specific substring.
 
-`element[attr$=value]`
+Suffix (`element[attr$="value"]`)
 
-- Represents elements with an attribute name of `attr` whose value is suffixed (followed) by `value`.
+- matches a specific attribute whose value ends with a specific string.
 
-`element[attr*=value]`
+`element[attr|="value"]`
 
-- Represents elements with an attribute name of `attr` whose value contains at least one occurrence of `value` within the string.
+- Represents elements with an attribute name of `attr` whose value can be exactly `value` or can begin with `value` immediately followed by a hyphen, `-` (U+002D). It is often used for language sub-code matches.
 
 Universal Selector (`*`)
 
@@ -121,7 +126,7 @@ Universal Selector (`*`)
   > box-sizing: border-box;
   > margin: 0;
 
-Pseudo class Selector (`:`)
+Pseudo class Selector (`:`) [see also](#pseudo-classes)
 
 - keyword added to a selector that specifies a special state of the selected element(s).
 - most common pseudo class:
@@ -209,18 +214,19 @@ Contrast
 
    > ie. width: 100%; height: 50%;
 
-2. em
+2. `em`
 
    - 1em = 16px --> default browser style
    - 1em is the base value
+   - an `em` is equivalent to the width of the letter `m`.
 
-3. rem
+3. `rem`
 
    - depends on the value of the root and not the parent
    - 1rem = 16px --> default browser style
    - 1rem is the base value
 
-4. vh/vw
+4. `vh`/`vw`
 
    - view height and view width
    - depends on the size of the screen (percent of the screen)
@@ -259,6 +265,7 @@ Sans-Serif
 - without serif.
 - describe fonts with characters which lack flourishes at the end of the strokes.
 - often used to project an image of simplicity, modernity or minimalism.
+- easier to read on smaller text.
 - ie. _Helvetica_
 
 Monospaced
@@ -271,7 +278,7 @@ Web fonts
 
 - multitude of different fonts on the web.
 - can either import or copy and paste the code to the stylesheet
-- Free font services: [Google Fonts](https://fonts.google.com/), [Adobe Fonts](https://fonts.adobe.com/).
+- Free font services: [Google Fonts](https://fonts.google.com/), [Adobe Fonts](https://fonts.adobe.com/), [Font Squirrel](fontsquirrel.com), [Font Ex](fontex.org), [Open Font Library](openfontlibrary.org)
 - Paid font services: [Fonts](fonts.com)
   - where you can download multiple fonts.
   - different font formats:
@@ -283,11 +290,19 @@ Web fonts
 
     ```css
     Syntax: @font-face {
-              font-family`: 'nameYouWant';
-              src: url('path/fontName.woff2'), 
-                   url('path/fontName.woff'), 
-                   url('path/fontName.ttf');
-            }
+              font-family: 'nameYouWant';
+              src: url('path/fontName.woff2') format('woff2'), 
+                   url('path/fontName.woff') format('woff'), 
+                   url('path/fontName.ttf') format('ttf');
+              }
+    ```
+  
+  - the declared font name can then be used as value of the property `font-family`.
+
+    ```css
+    h1 {
+      font-family: 'nameYouWant';
+    }
     ```
 
 - **Web safe fonts**: pre-installed fonts of browsers and OS.
@@ -322,6 +337,12 @@ Web fonts
 - aligns the text to its parent element.
 - center, justify, left, right
 
+`vertical-align`
+
+- is not intended to align text in the middle of a block element but it does have this effect when used with table cells
+- more commonly used with inline elements such as `img`, `em`, or `strong` elements.
+- values: `baseline`, `sub`, `super`, `top`, `text-top`, `middle`, `bottom`, `text-bottom`.
+
 `text-indent`
 
 - indention of the text
@@ -329,13 +350,17 @@ Web fonts
 
 `line-height`
 
+- _leading_: vertical space between(`ascender` and `descender`) lines of text.
+- _descender_: part of a letter that drops beneath the baseline.
+- _ascender_: highest point of a letter.
 - controls the space in between the lines.
 - can be unitless or a length value.
   - unitless number is preferred since it is responsive based on the current font size.
 
 `letter-spacing`
 
-- controls the spaces in between letters
+- controls the spaces in between letters.
+- _kerning_: space between each letter.
 
 `word-spacing`
 
@@ -345,7 +370,18 @@ Web fonts
 `text-decoration`
 
 - decorates the text
-- line-through, overline, underline, etc.
+- none, line-through, overline, underline, blink, etc.
+
+`text-shadow`
+
+- used to create a _drop shadow_ or a dark version of the text behind it and slightly offset. (and _embossed effect_ or light version)
+- values: right/left offset, bottom/top offset, blur, color
+
+  ```css
+  Syntax: p {
+            text-shadow: 5px 5px 2px green;
+          }
+  ```
 
 ---
 
@@ -353,34 +389,107 @@ Web fonts
 
 > CONTENT >> PADDING >> BORDER >> MARGIN
 
-`padding`
+### `padding`
 
 - controls the padding or margin around the content
 - distance from the content to the edge of the element
-- top, bottom, left, right
-  > ie. padding-left, padding-right, etc.
-  > ie. padding: value; --> padding size all around the element
-  > ie. padding: top/bottom left/right; --> padding: 30px 50px;
-  > ie. padding: top right bottom left; --> padding: 30px 20px 50px 40px;
+- `padding-top`,  `padding-right`, `padding-bottom`, `padding-left`
 
-`margin`
+  ```css
+  Syntax:
+  padding: value;  //padding size all around the element
+  padding: top/bottom left/right; //ie. padding: 30px 50px;
+  padding: top left/right bottom //ie. padding: 30px 50px 40px;
+  padding: top right bottom left; //ie. padding: 30px 20px 50px 40px;
+  ```
+
+### `margin`
 
 - distance from the screen or elements to the another element
-- same syntax with the padding
+- same syntax with the [padding](#padding)
 - can be negative margin
-- horizontal centering a block element
-- make the margin auto
-  - margin: auto;
+- to make the element centered within the width of its element use `auto`. 
+  - horizontal centering a block element
+  - note that the width of the parent should be specified.
+  
+    ```css
+    margin: auto;
+    ```
 
-`border`
+- `vertical margin`: where top and bottom margins collapse or adds up between adjacent elements.
+
+### `overflow`
+
+- controls what happens to the content that spills or overflows outside its parent box or container.
+- makes an image or other element be hidden when its size overflows from the given div or window
+
+  ```css
+  Syntax:
+  body {
+    overflow: hidden; // any content that overflows will be hidden from view. 
+    overflow: scroll; //a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling.
+    overflow: visible; //default value.
+  }
+  ```
+
+### `visibility`
+
+- hides elements from view.
+
+  ```css
+  Syntax:
+  body {
+    visibility: hidden;
+    visibility: visible;
+    visibility: collapse;
+  }
+  ```
+
+### `box-sizing`
+
+- controls the type of box model the browser should use when interpreting a web page.
+
+  ```css
+  * {
+    box-sizing: content-box; //default; affected by border thickness and padding.
+    box-sizing: border-box; //The border thickness and padding will be included inside of the box
+  }
+  ```
+
+### `border`
 
 - border around the edge of an element
-- border-style: style of the border
-- border-width: width of the border
-- border-color: color of width
-- syntax: `border: width style color;`
-- border radius
+- `border-style`: style of the border
+  - values are:
+    - `solid`: a single solid line
+    - `dotted`: a series of square dots
+    - `dashed`: a series of short lines
+    - `double`: two solid lines
+    - `groove`: appears to be carved into the page
+    - `ridge`: appears to stick out from the page
+    - `inset`: appears to be embedded into the page
+    - `outset`: looks like is is coming out of the screen
+    - `hidden` or `none`: no border
+- `border-width`: width of the border
+- `border-color`: color of width
+  
+  ```css
+  Syntax: 
+  border: width style color;
+  ```
+
+- `border-radius`
   - changes the corners to round corners
+
+`opacity:` property
+
+- controls the transparency of an element
+- the max value is 1 and minimum is 0
+
+`visibility:` property
+
+- controls the visibility of an element
+- hidden or visible
 
 ---
 
@@ -396,40 +505,74 @@ Web fonts
 
 ### Display Property (`display:`)
 
-block
+`block`
 
 - always starts a new line and takes full width
 - top/bottom margin is respected
 
-inline
+`inline`
 
 - does not start a new line and only take up as much as content space
 - top/bottom margin is not respected
 
-inline block
+`inline-block`
 
 - for the top/bottom margin to be respected and display the element in only one line
 
-none
+`none`
 
 - does not display the element
 - totally take out an element
 
+`float:` property
+
+- makes an image float
+  - values: `left` or `right`
+- moving an element as far left or as far right as possible in the container
+- works for static and relative positioned elements.
+- must have a _width specified_. Otherwise, the element will assume the full width of its containing element, and changing the float value will not yield any visible results.
+
+`clear:` property
+
+- clear property makes the floating image be respected by the next element and will be left alone to the next line
+  - values: 
+    - `left`: the left side of the element will not touch any other element within the same containing element.
+    - `right`: the right side of the element will not touch any other element within the same containing element.
+    - `both`: neither side of the element will touch any other element within the same containing element.
+
 ---
 
-`box-sizing: border-box;`
+### Position property (`position:`)
 
-- so that any other padding that is added will be within the element
+- can be offset by using _offset properties_:
+  - `top:` , `right:`, `bottom:` , `left:`
 
-Opacity property (`opacity:`)
+`static`
 
-- controls the transparency of an element
-- the max value is 1 and minimum is 0
+- normal flow of the document as written in code.
 
-Visibility property (`visibility:`)
+`relative`
 
-- controls the visibility of an element
-- hidden or visible
+- sets the element's position relative to its original position.
+
+`absolute`
+
+- sets the element's position relative to the position of its ancestor element with a relative position property.
+
+`fixed`
+
+- set the element relative to the actual document.
+- this fixes the element to its specific position.
+
+`sticky`
+
+- keeps an element in the document flow as the user scrolls, but sticks to a specified position as the page is scrolled further.
+
+`z-index`
+
+- controls the z-axis (what's on top over the other ie. in multiple image overlays)
+- default value is zero
+- will only work if the position value is declared (`absolute` or `relative`); will not work if position is static
 
 ---
 
@@ -470,43 +613,15 @@ linear-gradient()
 - useful in overlaying background images for a clearer image
 - search the net for: 'css linear generator' to generate different gradient combinations
 
-**syntax shortcut for background property**
+>Syntax Shortcut for background property
+>> background: `<linear-gradient(value, value)>` `<url(image location)>` `<position>`/`<size>` `<repeat value>` `<attachment value>`
 
-- `background: linear gradient(value, value), url(image location) <space> position/size <space> attachment value <space> repeat value`
-  > ie. background: linear gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("./images/big-image.jpeg") center/cover no-repeat fixed;
-
----
-
-Float/Clear property (`float:`/`clear:`)
-
-- float property makes an image float
-  - values: left or right
-- clear property makes the floating image be respected by the next element and will be left alone to the next line
-  - values: left, right or both
-
-Overflow property (`overflow: hidden`)
-
-- makes an image or other element be hidden when its size overflows from the given div or window
-
-### Position property (`position:`)
-
-- can also be: `top:` , `right:`, `bottom:` , `left:`
-
-position: `static`
-
-- normal flow of the document as written in code
-
-position: `relative`
-
-- sets the element's position relative to its original position
-
-position: `absolute`
-
-- sets the element's position relative to the position of its ancestor element with a relative position property
-
-position: `fixed`
-
-- set the element relative to the actual document
+```css
+Example: 
+  body {
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("./images/big-image.jpeg") center/cover no-repeat fixed;
+    }
+```
 
 ---
 
@@ -531,28 +646,19 @@ position: `fixed`
 
 ---
 
-z-index
+## Pseudo Elements 
 
-- controls the z-axis (what's on top over the other ie. in multiple image overlays)
-- default value is zero
-- will only work if the position value is declared (`absolute` or `relative`); will not work if position is static
+- acts like an extra element in the code.
 
----
+`::before`/`::after` 
 
-pseudo elements (`::before` `::after` CONTENT not element)
+  ```css
+  Syntax: element::before/::after {content: "";}
+  ```
 
-- Syntax: `elementType::before/::after{content: "";}`
+- content property should always have a value of `""`
 - to add a content before/after another content
 - does not work with images
-
----
-
-### Basic Selectors (review)
-
-Descendant and Child Combinators
-
-- syntax for descendant: `ancestor/parent descendant{block of code}`
-- syntax for direct children: `ancestor/parent > child{block of code}`
 
 `element::first-line`
 
@@ -564,27 +670,35 @@ Descendant and Child Combinators
 
 **note**: `:` is used in classes while `::` is used in pseudo elements
 
+## Pseudo Classes
+
+- is a keyword added to a selector that specifies a special state of the selected element(s).
+
+ - see list of [pseudo classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+
 `element:hover`
 
 - changes the element as you hover over it
 
-#### Links
+`element:link`
 
-`a:link{}`
+- set styles for all links that has not been visited.
 
-- selects all links to be styled
-
-`a:visited`
+`element:visited`
 
 - changes/styles the links as it is visited or clicked
 
-`a:hover`
+`element:hover`
 
-- changes/styles the links as you hover over it
+- set styles over elements as you hover over it
 
-`a:active`
+`element:focus`
 
-- changes/styles the links as it is clicked on the spot
+- applied when an element is in focus.
+
+`element:active`
+
+- styles are applied as the element is being activated by the user
 
 `:root{}`
 
@@ -697,7 +811,7 @@ __syntax shortcut__
 `text-shadow:` / `box-shadow:`
 
 - adds shadow on the text/box
-- syntax: `x-axis value` `y-axis value` `blur value` `color`
+- syntax: `x-axis value` `y-axis value` `blur value` `spread of shadow`(expand if positive value, contract if negative) `color`
 - can use text/box-shadow generator and copy & paste the code
  
 ---
