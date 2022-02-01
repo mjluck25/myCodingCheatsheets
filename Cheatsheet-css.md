@@ -429,6 +429,7 @@ Web fonts
     overflow: hidden; // any content that overflows will be hidden from view. 
     overflow: scroll; //a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling.
     overflow: visible; //default value.
+    overflow: auto; //automatically hides content when it overflows
   }
   ```
 
@@ -526,8 +527,7 @@ Web fonts
 
 `float:` property
 
-- makes an image float
-  - values: `left` or `right`
+- values: `left` or `right`
 - moving an element as far left or as far right as possible in the container
 - works for static and relative positioned elements.
 - must have a _width specified_. Otherwise, the element will assume the full width of its containing element, and changing the float value will not yield any visible results.
@@ -905,6 +905,22 @@ to remove extra space (whitespace) in html
 - sets the element to the designated span of rows or columns
   > ie. grid-column: 1/3; means start from 1st line and end in 3rd line
 
+#### The 960-pixel-wide 12 Column grid layout
+
+- one of the most common grid layout.
+- the page is 960px wide.
+- with 12 equal-sized columns (60px wide).
+  - each column with margin of 10px.
+- see [960gs framework](www.960.gs)
+
+### CSS Frameworks
+
+- provide CSS templates in creating layout grids, styling forms etc.
+- other grid-based CSS frameworks:
+  - [Blue Print CSS](blueprintcss.org)
+  - [Less Framework](lessframework.com)
+  - [Yahoo Grids](developer.yahoo.com/yui/grids/)
+
 ---
 
 Online tools to test pages in multiple browsers
@@ -963,3 +979,26 @@ Non-semantic
 11. Because styling state is easier.
 
 12. Because they produce a small HTML footprint.
+
+---
+
+### Adding Multiple Stylesheets
+
+#### 2 Ways to add multiple stylesheets to a page
+
+1. Add a `link` to one stylesheet (ie. _styles.css_) and then add `@import` to that stylesheet to import several stylesheets.
+  
+  ```css
+  Within styles.css:
+  @import url("styles1.css");
+  @import url("styles2.css");
+  ```
+
+2. Directly add multiple stylesheet `link`s within the HTML head element.
+
+  ```html
+  <head>
+    <link href='styles1.css' rel='stylesheet' type='text/css'>
+    <link href='styles2.css' rel='stylesheet' type='text/css'>
+  </head>
+  

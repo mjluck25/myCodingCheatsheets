@@ -69,3 +69,6 @@ git remote add origin |
 
 git push -u origin master
 --> to push local repository to github
+
+github flow
+--> main -> create branch -> make commits -> open pull request -> deploy branch -> merge branch into main
