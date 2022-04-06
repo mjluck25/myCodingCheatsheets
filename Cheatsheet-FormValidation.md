@@ -24,3 +24,26 @@
   1. The first takes place while the user is still inputting data into the form on the front-end. We can make __asynchronous requests__ to the server with pieces of their data and send feedback directly to the user before they’ve submitted. This is slower than front-end validation and can be a design challenge from a user-experience perspective.
 
   1. The second is once the form has been submitted. Back-end form validation is our application’s last defense against problematic data, and it’s essential to verify the validity and safety of data before adding it to a database. This is also an opportunity to “sanitize” the data: in order for our database to be useful, it’s important that all data within it is formatted consistently. This means that while we may want to be flexible about the formatting we require from a user, we likely want to transform inputs into a strict format before entering them in the database.
+
+### Creating Form Validation
+
+#### Requiring an Input
+
+- by enforcing a `required` attribute (no value needed) to the form, an input will be required in that field.
+
+#### Setting Min/Max
+
+- this applies only to `range` and `number` type of inputs.
+
+#### Checking text length
+
+- to set a min/max number of characters for text fields, we can use `minlength` and `maxlength` attributes.
+
+#### Matching a pattern
+
+- For cases when we want user input to follow specific guidelines, we use the `pattern` attribute and assign it a **regular expression, or regex**.
+
+```html
+  <input type="username" pattern="any regex pattern">
+```
+
