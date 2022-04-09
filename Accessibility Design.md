@@ -30,3 +30,37 @@
 #### Color accessibility
 
 - contrast between elements in the foreground and those in the background.
+
+
+## Semantic HTML Elements
+
+- The quickest way of improving accessibility for screen readers is to use the appropriate tags for a given task.
+
+## ARIA Role
+
+- To help add context to web page information, ARIA provides an HTML attribute called _role_.
+- The value of an element’s role changes how a screen reader communicates the element.
+
+```html
+for example:
+<div id="code-editor" role="complementary">
+  ...
+</div>
+```
+
+- this [link](https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties) has a list of acceptable ARIA roles..
+
+### ARIA properties
+
+- are attributes that you can add to HTML elements.
+- provide additional information about elements that might not be obvious to users of screen readers.
+- Other ARIA properties are useful in more complex websites using HTML forms, JavaScript, and other advanced tools.
+- [ARIA Techniques](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques)
+
+`aria-label`
+
+- an example of an ARIA property. 
+
+### `alt` Attribute
+
+- used to describe an image (or several other elements).
